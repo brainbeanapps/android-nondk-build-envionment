@@ -1,0 +1,61 @@
+FROM brainbeanapps/android-bare-build-environment:v1.0.0
+
+LABEL maintainer="devops@brainbeanapps.com"
+
+# Switch to root
+USER root
+
+# Install Android SDK components
+RUN (yes | sdkmanager \
+    "platforms;android-19" \
+    "build-tools;29.0.2" \
+    "build-tools;29.0.1" \
+    "build-tools;29.0.0" \
+    "build-tools;29.0.0-rc3" \
+    "build-tools;29.0.0-rc2" \
+    "build-tools;29.0.0-rc1" \
+    "build-tools;28.0.3" \
+    "build-tools;28.0.2" \
+    "build-tools;28.0.1" \
+    "build-tools;28.0.0" \
+    "build-tools;28.0.0-rc2" \
+    "build-tools;28.0.0-rc1" \
+    "build-tools;27.0.3" \
+    "build-tools;27.0.2" \
+    "build-tools;27.0.1" \
+    "build-tools;27.0.0" \
+    "build-tools;26.0.3" \
+    "build-tools;26.0.2" \
+    "build-tools;26.0.1" \
+    "build-tools;26.0.0" \
+    "build-tools;25.0.3" \
+    "build-tools;25.0.2" \
+    "build-tools;25.0.1" \
+    "build-tools;25.0.0" \
+    "build-tools;24.0.3" \
+    "build-tools;24.0.2" \
+    "build-tools;24.0.1" \
+    "build-tools;24.0.0" \
+    "build-tools;23.0.3" \
+    "build-tools;23.0.2" \
+    "build-tools;23.0.1" \
+    "build-tools;23.0.0" \
+    "build-tools;22.0.1" \
+    "build-tools;22.0.0" \
+    "build-tools;21.1.2" \
+    "build-tools;21.1.1" \
+    "build-tools;21.1.0" \
+    "build-tools;21.0.2" \
+    "build-tools;21.0.1" \
+    "build-tools;21.0.0" \
+    "build-tools;20.0.0" \
+    "build-tools;19.1.0" \
+    "build-tools;19.0.3" \
+    "build-tools;19.0.2" \
+    "build-tools;19.0.1" \
+    "build-tools;19.0.0" \
+  )
+
+# Switch to user
+USER user
+WORKDIR /home/user
