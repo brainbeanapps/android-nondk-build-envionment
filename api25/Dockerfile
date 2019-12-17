@@ -1,4 +1,4 @@
-FROM brainbeanapps/android-bare-build-environment:v1.0.0
+FROM brainbeanapps/android-bare-build-environment:v1.2.0
 
 LABEL maintainer="devops@brainbeanapps.com"
 
